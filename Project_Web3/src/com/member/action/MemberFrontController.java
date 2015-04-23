@@ -23,14 +23,15 @@ import javax.servlet.http.HttpServletResponse;
 		   if(command.equals("/Login.do")){
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
-			   forward.setPath("Main.jsp");
+			   forward.setPath("./Main.jsp");
+			  
 			   
-		   }else if(command.equals("/Join.do")){
+		   }/*else if(command.equals("/Join.do")){
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
-			   forward.setPath("Main.jsp");
+			   forward.setPath("./member/JoinUs.jsp");
 			   
-		   }/*else if(command.equals("/MemberLoginAction.me")){
+		   }else if(command.equals("/MemberLoginAction.me")){
 			   action = new MemberLoginAction();
 			   try{
 				   forward=action.execute(request, response);

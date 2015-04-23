@@ -23,8 +23,20 @@ public class MemberJoinAction implements Action{
 	   		member.setUser_password(request.getParameter("user_chkpwd"));
 	   		member.setUser_phonenum(request.getParameter("user_PhoneNumber"));
 	   		member.setUser_email(request.getParameter("user_email"));
-	   		member.setUser_menu(request.getParameter("menu"));
 	   		
+	   		String[] menuArr = request.getParameterValues("menu");
+	        
+	        String arr = "";
+			if(menuArr!=null){
+				for(int i = 0 ; i < menuArr.length; i++){
+		
+					arr += menuArr[i] ;
+				
+				}
+			}
+		
+			member.setUser_menu(arr);
+			
 	   		result=memberdao.joinMember(member);
 	   		
 	   		if(result==false){

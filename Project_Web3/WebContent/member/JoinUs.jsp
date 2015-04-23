@@ -5,26 +5,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
-<link rel="icon" href="img/icon.png" type="image/x-icon">
-<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<link rel="icon" href="../img/icon.png" type="image/x-icon">
+<link rel="shortcut icon" href="../img/icon.png" type="image/x-icon" />
 <meta name="description" content="Your description">
 <meta name="keywords" content="Your keywords">
 <meta name="author" content="Your name">
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css"
+<link rel="stylesheet" href="../css/bootstrap.css" type="text/css"
 	media="screen">
-<link rel="stylesheet" href="css/responsive.css" type="text/css"
+<link rel="stylesheet" href="../css/responsive.css" type="text/css"
 	media="screen">
-<link rel="stylesheet" href="css/style.css" type="text/css"
+<link rel="stylesheet" href="../css/style.css" type="text/css"
 	media="screen">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
 	rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/superfish.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 
 <script type="text/javascript">
 	if ($(window).width() > 1024) {
-		document.write("<"+"script src='js/jquery.preloader.js'></"+"script>");
+		document.write("<"+"script src='../js/jquery.preloader.js'></"+"script>");
 	}
 </script>
 <script>
@@ -53,7 +53,7 @@
 		<a href="#login-box" class="login-window">Login</a>
 	</div>
 	<div id="login-box" class="login-popup">
-		<a href="#" class="close"><img src="img/close_pop.png"
+		<a href="#" class="close"><img src="../img/close_pop.png"
 			class="btn_close" title="Close Window" alt="Close" /></a>
 		<form method="post" class="signin" action="#">
 			<fieldset class="textbox">
@@ -85,24 +85,24 @@
 				<div class="navbar navbar_">
 					<div class="container">
 						<h1 class="brand brand_">
-							<a href="Main.jsp"><img alt="" src="img/logo.png"> </a>
+							<a href="Main.jsp"><img alt="" src="../img/logo.png"> </a>
 						</h1>
 						<a class="btn btn-navbar" data-toggle="collapse"
 							data-target=".nav-collapse_">Menu <span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse nav-collapse_  collapse">
 							<ul class="nav sf-menu">
-								<li><a href="Main.jsp">About</a></li>
-								<li><a href="Company.jsp">Company</a></li>
-								<li><a href="MenuSearch.jsp">Menu Search</a></li>
-								<li><a href="AreaSearch.jsp">Area Search</a></li>
-								<li><a href="FreeBoard.jsp">Community</a>
+								<li><a href="../Main.jsp">About</a></li>
+								<li><a href="../Company.jsp">Company</a></li>
+								<li><a href="../MenuSearch.jsp">Menu Search</a></li>
+								<li><a href="../AreaSearch.jsp">Area Search</a></li>
+								<li><a href="../FreeBoard.jsp">Community</a>
 									<ul>
-										<li><a href="Notice.jsp">공지사항</a></li>
-										<li><a href="FreeBoard.jsp">자유게시판</a></li>
+										<li><a href="../Notice.jsp">공지사항</a></li>
+										<li><a href="../FreeBoard.jsp">자유게시판</a></li>
 									</ul></li>
 								<li class="active"><a href="JoinUs.jsp">Join Us</a></li>
-								<li><a href="Admin.jsp">Admin</a>
+								<li><a href="../Admin.jsp">Admin</a>
 									<ul>
 										<li><a href="#">맛집관리 </a></li>
 										<li><a href="#">맛집신청</a></li>
@@ -132,7 +132,7 @@
 									by <a href="#">최강6조</a>
 								</div>
 
-								<div class="clear"></div> <img alt="" src="img/mandu.jpg">
+								<div class="clear"></div> <img alt="" src="../img/mandu.jpg">
 								<p>존맛에 오신 것을 환영합니다</p>
 							</li>
 						</ul>
@@ -142,7 +142,7 @@
 					<article class="span4">
 					<h3 class="extra">Join_us</h3>
 
-					<form id="form" action="./MemberJoinAction.do" method="post">
+					<form id="form" action="../MemberJoinAction.do" method="post">
 						<input type="text" name="user_lastname" placeholder="성"> <input
 							type="text" name="user_firstname" placeholder="이름"><br>
 						<input type="text" name="user_id" placeholder="아이디"> <input
@@ -155,10 +155,10 @@
 						<p></p>
 						<h3>관심메뉴</h3>
 						<h5>
-							<input type="checkbox" name="menu">한식&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="checkbox" name="menu">중식&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="checkbox" name="menu">일식&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="checkbox" name="menu">양식
+							<input type="checkbox" name="menu" value="한식">한식&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="menu" value="중식">중식&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="menu" value="일식">일식&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="menu" value="양식">양식
 							
 						</h5>
 						<br> 
@@ -189,6 +189,6 @@
 		</div>
 	</div>
 	</footer>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
 </body>
 </html>
