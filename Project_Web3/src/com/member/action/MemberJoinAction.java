@@ -34,7 +34,7 @@ public class MemberJoinAction implements Action{
 				
 				}
 			}
-		
+			
 			member.setUser_menu(arr);
 			
 	   		result=memberdao.joinMember(member);

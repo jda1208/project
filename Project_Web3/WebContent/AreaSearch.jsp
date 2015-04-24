@@ -88,7 +88,7 @@
 										<li><a href="Notice.jsp">공지사항</a></li>
 										<li><a href="FreeBoard.jsp">자유게시판</a></li>
 									</ul></li>
-								<li><a href="JoinUs.jsp">Join Us</a></li>
+								<li><a href="member/JoinUs.jsp">Join Us</a></li>
 								<li><a href="Admin.jsp">Admin</a>
 									<ul>
 										<li><a href="#">맛집관리 </a></li>
