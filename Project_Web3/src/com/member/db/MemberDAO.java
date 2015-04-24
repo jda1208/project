@@ -1,5 +1,6 @@
 package com.member.db;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,9 @@ import javax.sql.DataSource;
 public class MemberDAO {
 	Connection con;
 	PreparedStatement pstmt;
+	java.sql.Statement stmt;
 	ResultSet rs;
+	ResultSet resultset;
 	DataSource ds;
 	
 	public MemberDAO() {
@@ -54,4 +57,35 @@ public class MemberDAO {
 		
 		return false;
 	}
+	
+	
+	public int chkMember(String user_id){
+		String sql="select user_id from userlist where user_id='"+user_id+"'";
+		int result = 0;
+		
+		try{
+			con = ds.getConnection();
+			stmt=con.createStatement();
+			rs=stmt.executeQuery(sql);
+	
+			if(rs.next())
+			{
+				if(rs.getString("user_id").equals(user_id)){
+					result = 1;	// 중복
+				}
+				else{
+					result = 0;	//중복x
+				}
+			}
+		}catch(Exception ex){
+			System.out.println("chkMember 에러: " + ex);			
+		}finally{
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		
+		return result;
+	}
+	
 }

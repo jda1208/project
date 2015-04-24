@@ -47,7 +47,7 @@ public class MemberJoinAction implements Action{
 	   		//회원가입 성공.
 	   		forward.setRedirect(true);
 	   		System.out.println("성공");
-	   		forward.setPath("./Login.do");
+	   		forward.setPath("./ChkId.do");
 	   		return forward;
 	}
 }

@@ -145,9 +145,9 @@
 					<form id="form" name="form" action="../MemberJoinAction.do" method="post">
 						<input type="text" name="user_lastname" placeholder="성"> 
 						<input type="text" name="user_firstname" placeholder="이름"><br>
-						<input type="text" name="user_id" placeholder="아이디"> 
+						<input type="text" name="user_id" id="user_id" placeholder="아이디"> 
 						
-						<input type="button" name="chk_id" class="chk_id" value="중복확인"><br>
+						<input type="button" name="chk_id" id="chk_id" value="중복확인" onclick="chkId()"><br>
 						<input type="password" name="user_password" placeholder="비밀번호">
 						<input type="password" name="user_chkpwd" placeholder="비밀번호 확인"><br>
 						<input type="text" name="user_PhoneNumber" size="50%"

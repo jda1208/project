@@ -57,4 +57,15 @@ function jointest(){
 		}	
 
 	document.form.submit();
+	alert("회원가입이 완료되었습니다.");
 }
+
+
+function chkId(){
+	var id = document.form.user_id.value;
+	
+	window.open('Chkid.jsp?user_id='+ id,'win','width=200,height=100,scrollbars=no');
+	
+}
+
+
