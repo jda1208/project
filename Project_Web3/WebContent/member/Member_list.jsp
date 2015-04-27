@@ -1,17 +1,18 @@
 
+<%@page import="com.member.db.MemberBean"%>
 <%@page import="com.restaurant.db.RestaurantBean"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-   List reslist=(List)request.getAttribute("reslist");
+   List memberlist=(List)request.getAttribute("memberlist");
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <title>Admin</title>
+   <title>Member List</title>
    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
    <meta name="description" content="Your description">
@@ -59,54 +60,56 @@
 <!--============================== content =================================-->
             <div id="content">
          <div class="container">
-            <h3>Application List</h3>
+            <h3>Member List</h3>
             <div class="row">
                <table class="board-table">
                   <tr>
-                     <td colspan="6">맛집신청 리스트</td>
+                     <td colspan="7"><h3>회원 목록</h3></td>
                   </tr>
                   <tr>
                      <th>
-                        <div>글번호</div>
+                        <div>ID</div>
                      </th>
                      <th>
-                        <div>글쓴이</div>
+                        <div>PWD</div>
+                     </th>
+                     <th>
+                        <div>이름</div>
+                     </th>
+                     <th>
+                        <div>전화번호</div>
                      </th>
                      <th>
                         <div>이메일</div>
                      </th>
                      <th>
-                        <div>맛집이름</div>
+                        <div>관심메뉴</div>
                      </th>
                      <th>
-                        <div>맛집주소</div>
-                     </th>
-                     <th>
-                        <div>맛집전화번호</div>
+                        <div>등급번호</div>
                      </th>
                    
                   </tr>
                   
                   <%
-                     for (int i = 0; i < reslist.size(); i++) {
-                        RestaurantBean res = (RestaurantBean) reslist.get(i);
+                     for (int i = 0; i < memberlist.size(); i++) {
+                        MemberBean mb = (MemberBean) memberlist.get(i);
                   %> 
                   <tr align="center" valign="middle" bordercolor="#333333">
-                     <td><%=res.getTextnum()%></td>
+                     <td><%=mb.getUser_id()%></td>
                      <td>
                         
-                        <%= res.getUser_id() %>
+                        <%= mb.getUser_password() %>
                      </td>
-                     <td><%= res.getUser_email() %></td>
+                     <td><%= mb.getUser_name() %></td>
                      
-                     <td><a href="./RestaurantDetailAction.res?num=<%=res.getTextnum()%>">
-                            <%=  res.getRestaurant_name() %>
-                        </a></td>
-                     <td><%= res.getRestaurant_address() %></td>
-                     <td><%= res.getRestaurant_phonenum() %></td>
+                     <td><%= mb.getUser_phonenum() %></td>
+                     <td><%= mb.getUser_email() %></td>
+                     <td><%= mb.getUser_menu() %></td>
+                     <td><%= mb.getGradenum() %></td>
                   <%} %>
                   <tr align=center height=20>
-                     <td colspan=6 style=font-family:Tahoma;font-size:10pt;>
+                     <td colspan=7 style=font-family:Tahoma;font-size:10pt;>
                         <a href="#">[이전]</a>
                         <a href="#">[다음]</a>
                      </td>

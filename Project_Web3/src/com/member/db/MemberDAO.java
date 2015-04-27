@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -152,5 +154,38 @@ public class MemberDAO {
 		}
 
 		return result;
+	}
+	
+	public List MemberList(){
+		String sql="SELECT User_Id, User_Email, User_Name, User_Password, User_PhoneNum, User_Menu, GradeNum  FROM userlist";
+		List memberlist=new ArrayList();
+		
+		try{
+			con=ds.getConnection();
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()){
+				MemberBean mb=new MemberBean();
+				mb.setUser_id(rs.getString(1));
+				mb.setUser_email(rs.getString(2));
+				mb.setUser_name(rs.getString(3));
+				mb.setUser_password(rs.getString(4));
+				mb.setUser_phonenum(rs.getString(5));
+				mb.setUser_menu(rs.getString(6));
+				mb.setGradenum(rs.getString(7));
+				
+				memberlist.add(mb);
+			}
+			
+			return memberlist;
+		}catch(Exception e){
+			System.out.println("MemberList 에러: " + e);			
+		}finally{
+			if(rs!=null) try{rs.close();}catch(SQLException ex){}
+			if(pstmt!=null) try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		return null;
 	}
 }

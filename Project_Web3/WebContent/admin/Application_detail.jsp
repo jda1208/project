@@ -46,26 +46,26 @@
 				<h3>Application Detail</h3>
 				<div class="row" id="freeboard">
 					<form id="detailform">
-						<table width="80%" border="1" class="board-table">
+						<table class="board-table">
 							<tr>
-								<td width="20%" align="center"><b> 글번호 </b></td>
-								<td width="30%"><%=res.getTextnum()%></td>
+								<td><b> 글번호 </b></td>
+								<td><%=res.getTextnum()%></td>
 							</tr>
 							<tr>
-								<td width="20%" align="center"><b>글쓴이</b></td>
-								<td width="30%"><%=res.getUser_id()%></td>
-								<td width="20%" align="center"><b>이메일</b></td>
+								<td><b>글쓴이</b></td>
+								<td><%=res.getUser_id()%></td>
+								<td><b>이메일</b></td>
 								<td><%=res.getUser_email()%></td>
 							</tr>
 							<tr>
-								<td width="20%" align="center"><b>맛집이름</b></td>
+								<td><b>맛집이름</b></td>
 								<td><%= res.getRestaurant_name()%></td>
-								<td width="20%" align="center"><b>맛집전화번호</b></td>
+								<td><b>맛집전화번호</b></td>
 								<td><%=res.getRestaurant_phonenum()%>
 								</td>
 							</tr>
 							<tr>
-								<td width="20%" align="center"><b>맛집주소</b></td>
+								<td><b>맛집주소</b></td>
 								<td colspan="3"><%=res.getRestaurant_address()%></td>
 							</tr>
 							

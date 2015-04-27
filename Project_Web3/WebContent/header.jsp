@@ -106,8 +106,8 @@
 							<ul class="nav sf-menu">
 								<li class="active"><a href="Main.jsp">About</a></li>
 								<li><a href="Company.jsp">Company</a></li>
-								<li><a href="MenuSearch.me">Menu Search</a></li>
-								<li><a href="AreaSearch.me">Area Search</a></li>
+								<li><a href="MenuSearch.jsp">Menu Search</a></li>
+								<li><a href="AreaSearch.jsp">Area Search</a></li>
 								<li><a href="FreeBoard.bo">Community</a>
 									<ul>
 										<li><a href="Notice.bo">공지사항</a></li>
@@ -118,7 +118,7 @@
 									<ul>
 										<li><a href="#">맛집관리 </a></li>
 										<li><a href="RestaurantListAction.res">맛집신청</a></li>
-										<li><a href="#">회원관리</a></li>
+										<li><a href="MemberListAction.do">회원관리</a></li>
 									</ul></li>
 							</ul>
 						</div>
