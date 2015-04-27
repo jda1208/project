@@ -1,4 +1,4 @@
-package com.member.action;
+/*package com.admin.action;
 
 import java.io.IOException;
 
@@ -7,66 +7,78 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
- public class MemberFrontController 
+ public class AdminFrontController 
  	extends javax.servlet.http.HttpServlet 
  	implements javax.servlet.Servlet {
-	 static final long serialVersionUID = 1L;
 	 protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 	 	throws ServletException, IOException {
-		 System.out.print("member");
 		 String RequestURI=request.getRequestURI();
 		 String contextPath=request.getContextPath();
 		 String command=RequestURI.substring(contextPath.length());
 		 ActionForward forward=null;
 		 Action action=null;
 		   
-		   if(command.equals("/Login.do")){
+		   if(command.equals("/BoardWrite.bo")){
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
-			   forward.setPath("./Main.jsp");
-			  
-			   
-		   }else if(command.equals("/Join.do")){
-			   forward=new ActionForward();
-			   forward.setRedirect(false);
-			   forward.setPath("./member/JoinUs.jsp");
-			   
-		   }else if(command.equals("/MemberLoginAction.do")){
-			   action = new MemberLoginAction();
+			   forward.setPath("./board/qna_board_write.jsp");
+		   }else if(command.equals("/BoardReplyAction.bo")){
+			   action = new BoardReplyView();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }else if(command.equals("/MemberJoinAction.do")){
-			   action = new MemberJoinAction();
+		   }else if(command.equals("/BoardModify.bo")){
+			   action = new BoardModifyView();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }/*else if(command.equals("/MemberListAction.me")){
-			   action = new MemberListAction();
+	 	   }else if(command.equals("/BoardAddAction.bo")){
+			   action  = new BoardAddAction();
+			   try {
+				   forward=action.execute(request, response );
+			   } catch (Exception e) {
+				   e.printStackTrace();
+			   }
+		   }else if(command.equals("/BoardReplyView.bo")){
+			   action = new BoardReplyAction();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }else if(command.equals("/MemberViewAction.me")){
-			   action = new MemberViewAction();
+		   }else if(command.equals("/BoardModifyAction.bo")){
+			   action = new BoardModifyAction();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }else if(command.equals("/MemberDeleteAction.me")){
-			   action = new MemberDeleteAction();
+		   }else if(command.equals("/BoardDeleteAction.bo")){
+			   action = new BoardDeleteAction();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }*/
+		   }else if(command.equals("/BoardList.bo")){
+			   action = new BoardListAction();
+			   try{
+				   forward=action.execute(request, response);
+			   }catch(Exception e){
+				   e.printStackTrace();
+			   }
+		   }else if(command.equals("/BoardDetailAction.bo")){
+			   action = new BoardDetailAction();
+			   try{
+				   forward=action.execute(request, response);
+			   }catch(Exception e){
+				   e.printStackTrace();
+			   }
+		   }
 		   if(forward != null){
 		   if(forward.isRedirect()){
 			   response.sendRedirect(forward.getPath());
@@ -77,15 +89,14 @@ import javax.servlet.http.HttpServletResponse;
 		   }
 		   }
 	 }
-	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
-		System.out.println("get");
+		System.out.println("board");
 		doProcess(request,response);
 	}  	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
 		doProcess(request,response);
-	}   	  	      	    
-}
+	}   	  	    
+}*/

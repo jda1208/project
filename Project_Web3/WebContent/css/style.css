@@ -65,7 +65,7 @@ header {
   background: #eff5f5;
 }
 
-.login-window {
+.login-window, .logout-window {
 	-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
 	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
@@ -91,7 +91,7 @@ header {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #b23e35;
 }
-.login-window:hover {
+.login-window:hover, .logout-window:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e4685d), color-stop(1, #fc8d83));
 	background:-moz-linear-gradient(top, #e4685d 5%, #fc8d83 100%);
 	background:-webkit-linear-gradient(top, #e4685d 5%, #fc8d83 100%);
@@ -101,7 +101,7 @@ header {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4685d', endColorstr='#fc8d83',GradientType=0);
 	background-color:#e4685d;
 }
-.login-window:active {
+.login-window:active, .logout-window:active {
 	position:relative;
 	top:1px;
 }
@@ -547,7 +547,7 @@ p {
 	display: none;
 }
 
-.application{
+.application, .admin{
 	text-align: right;
 	margin-right: 50px;
 	/* display: none; */

@@ -34,7 +34,7 @@ public class MemberJoinAction implements Action{
 				
 				}
 			}
-			
+		
 			member.setUser_menu(arr);
 			
 	   		result=memberdao.joinMember(member);
@@ -47,7 +47,7 @@ public class MemberJoinAction implements Action{
 	   		//회원가입 성공.
 	   		forward.setRedirect(true);
 	   		System.out.println("성공");
-	   		forward.setPath("./ChkId.do");
+	   		forward.setPath("./Login.do");
 	   		return forward;
 	}
 }

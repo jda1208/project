@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+   String id = (String)session.getAttribute("id");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="icon" href="img/icon.png" type="image/x-icon">
-<link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 <meta name="description" content="Your description">
 <meta name="keywords" content="Your keywords">
 <meta name="author" content="Your name">
@@ -64,7 +67,7 @@
          }
       });
       
-      $('a.login-window').click(function() {
+      /* $('a.login-window').click(function() {
          // Getting the variable's value from a link 
          var loginBox = $(this).attr('href');
 
@@ -91,7 +94,7 @@
             $('#mask').remove();
          });
          return false;
-      });
+      }); */
       
       $(".QTPopup").css('display', 'none'); // set the popup display none default
       $('#application').click(function(){
@@ -109,72 +112,7 @@
 <div class="spinner"></div>
    <!--============================== header =================================-->
    <header>
-      <div class="btn-sign">
-         <a href="#login-box" class="login-window">Login</a>
-        </div>
-        <div id="login-box" class="login-popup">
-        <a href="#" class="close"><img src="img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-          <form method="post" class="signin" action="#">
-                <fieldset class="textbox">
-               <label class="username">
-                <span>Username</span>
-                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
-                </label>
-                
-                <label class="password">
-                <span>Password</span>
-                <input id="password" name="password" value="" type="password" placeholder="Password">
-                </label>
-                
-                <button class="submit button" type="button">Sign in</button>
-                
-                <p>
-                <a class="forgot" href="#">Forgot your password?</a>
-                </p>
-                
-                </fieldset>
-          </form>
-      </div>
-      <div class="logout">
-         <h5><a id="logout">Logout</a></h5>
-      </div>
-      
-   <div class="container clearfix">
-      <div class="row">
-         <div class="span12">
-            <div class="navbar navbar_">
-               <div class="container">
-                  <h1 class="brand brand_">
-                     <a href="Main.jsp"><img alt="" src="img/logo.png"> </a>
-                  </h1>
-                  <a class="btn btn-navbar" data-toggle="collapse"
-                     data-target=".nav-collapse_">Menu <span class="icon-bar"></span>
-                  </a>
-                  <div class="nav-collapse nav-collapse_  collapse">
-                     <ul class="nav sf-menu">
-                        <li class="active"><a href="Main.jsp">About</a></li>
-                        <li><a href="Company.jsp">Company</a></li>
-                        <li><a href="MenuSearch.jsp">Menu Search</a></li>
-                        <li><a href="AreaSearch.jsp">Area Search</a></li>
-                        <li><a href="FreeBoard.jsp">Community</a>
-                           <ul>
-                              <li><a href="Notice.jsp">공지사항</a></li>
-                              <li><a href="FreeBoard.jsp">자유게시판</a></li>
-                           </ul></li>
-                        <li><a href="member/JoinUs.jsp">Join Us</a></li>
-                        <li><a href="Admin.jsp">Admin</a>
-                           <ul>
-                              <li><a href="#">맛집관리 </a></li>
-                              <li><a href="#">맛집신청</a></li>
-                              <li><a href="#">회원관리</a></li>
-                           </ul></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+      <jsp:include page="header.jsp"></jsp:include>
    </header>
    <div class="bg-content">
       <div class="container">
@@ -270,7 +208,11 @@
                </div>
             </div>
          </div>
-         
+         <%= id %>
+         <div class="admin">
+            <h5><a id="admin">Admin</a></h5>
+         </div>
+
          <div class="application">
             <h5><a id="application">맛집신청</a></h5>
          </div>
@@ -283,36 +225,39 @@
                      <a href="#" class="closeBtn" title="Close"></a>
 
                      <div class="content">
+                     <form action="RestaurantApplyAction.res">
                         <table width="100%" cellpadding="0" cellspacing="0">
                            <tr>
                               <td>맛집 이름</td>
                            </tr>
                            <tr>
-                              <td><textarea class="text"> </textarea></td>
+                              <td><textarea class="text" name="res_name"></textarea></td>
                            </tr>
                            <tr>
                               <td>주소</td>
                            </tr>
                            <tr>
-                              <td><textarea class="text"> </textarea></td>
+                              <td>
+                              <textarea class="text" name="res_addr"></textarea></td>
                            </tr>
                            
                            <tr>
                               <td>전화번호</td>
                            </tr>
                            <tr>
-                              <td><textarea class="text"> </textarea></td>
+                              <td><textarea class="text" name="res_phone"></textarea></td>
                            </tr>
                            <tr>
-                              <td>작성자 연락처</td>
+                              <td>작성자 이메일</td>
                            </tr>
                            <tr>
-                              <td><textarea class="text"> </textarea></td>
+                              <td><textarea class="text" name="user_email"></textarea></td>
                            </tr>
                            <tr>
-                              <td><input type="button" class="submit" value="신청"></td>
+                              <td><input type="submit" class="submit" value="신청"></td>
                            </tr>
                         </table>
+                        </form>
                      </div>
                   </div>
                </div>
@@ -325,19 +270,7 @@
    </div>
    <!--============================== footer =================================-->
    <footer>
-      <div class="container clearfix">
-         <ul class="list-social pull-right">
-            <li><a class="icon-1" href="#"></a></li>
-            <li><a class="icon-2" href="#"></a></li>
-            <li><a class="icon-3" href="#"></a></li>
-            <li><a class="icon-4" href="#"></a></li>
-         </ul>
-         <div class="privacy pull-left">
-            Website Template designed by <a
-               href="http://www.templatemonster.com/" target="_blank"
-               rel="nofollow">TemplateMonster.com</a>
-         </div>
-      </div>
+      <jsp:include page="footer.jsp"></jsp:include>
    </footer>
    <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
