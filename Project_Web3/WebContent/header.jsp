@@ -117,7 +117,7 @@
 								<li><a href="Admin.jsp">Admin</a>
 									<ul>
 										<li><a href="#">맛집관리 </a></li>
-										<li><a href="#">맛집신청</a></li>
+										<li><a href="RestaurantListAction.res">맛집신청</a></li>
 										<li><a href="#">회원관리</a></li>
 									</ul></li>
 							</ul>

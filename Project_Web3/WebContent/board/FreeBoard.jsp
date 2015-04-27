@@ -3,85 +3,85 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	List boardList=(List)request.getAttribute("boardlist");
+   List boardList=(List)request.getAttribute("boardlist");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Community</title>
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-	<meta name="description" content="Your description">
-	<meta name="keywords" content="Your keywords">
-	<meta name="author" content="Your name">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/superfish.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<script src="js/forms.js"></script>
-	
-<!-- 	$.ajax(
-				{					   //method -> get(), post()
-					dataType : "json", //xml, json->getJSON, script->getScript, html(txt)->load
-					url : "Ex08_jsonboard.json",
-					//data : data(보내는 데이터) {"name":$('#name').val()}
-					success : function(data){
-						//서버에서 응답이 오고 상태정보 OK, 200~299
-						//가공작업
-						//$.each(data,function(index,obj){});
-						var board = "<table>";
-						board += "<tr><td>id</td><td>name</td><td>title</td><td>content</td></tr>";
-						$.each(data,function(){
-							//this가 객체를 받음
-							//console.log(this);
-							board += "<tr><td>"+this.id+"</td><td>"+this.name+"</td><td>"+this.title+"</td><td>"+this.content+"</td><tr>";	
-						});
-						board += "</table>";
-						$('#treeData').append(board);
-						
-					},
-					error : function(xhr) {
-						alert(xhr.status);
-					}
-				}		
-			); -->
-			
-	<script>		
-		   	$(window).load(function() {	
-		    	$('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){jQuery(this).css('display','none')});
-		    	
-		    	$('#write').click(function(){
-		    		$.ajax(
-		    			{
-		    				url: './board/write.jsp',
-		    				/* dataType: 'jsp', */
-		    				success: function(data){
-		    					$('#freeboard').load('./board/write.jsp #writeform');
-		    				}
-		    			}		
-		    		);
-		    	});
-		   	});			
-	</script>
-	
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Community</title>
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+   <meta name="description" content="Your description">
+   <meta name="keywords" content="Your keywords">
+   <meta name="author" content="Your name">
+   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+   <link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen">
+   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript" src="js/superfish.js"></script>
+   <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+   <script src="js/forms.js"></script>
+   
+<!--    $.ajax(
+            {                  //method -> get(), post()
+               dataType : "json", //xml, json->getJSON, script->getScript, html(txt)->load
+               url : "Ex08_jsonboard.json",
+               //data : data(보내는 데이터) {"name":$('#name').val()}
+               success : function(data){
+                  //서버에서 응답이 오고 상태정보 OK, 200~299
+                  //가공작업
+                  //$.each(data,function(index,obj){});
+                  var board = "<table>";
+                  board += "<tr><td>id</td><td>name</td><td>title</td><td>content</td></tr>";
+                  $.each(data,function(){
+                     //this가 객체를 받음
+                     //console.log(this);
+                     board += "<tr><td>"+this.id+"</td><td>"+this.name+"</td><td>"+this.title+"</td><td>"+this.content+"</td><tr>";   
+                  });
+                  board += "</table>";
+                  $('#treeData').append(board);
+                  
+               },
+               error : function(xhr) {
+                  alert(xhr.status);
+               }
+            }      
+         ); -->
+         
+   <script>      
+            $(window).load(function() {   
+             $('.spinner').animate({'opacity':0},1000,'easeOutCubic',function (){jQuery(this).css('display','none')});
+             
+             $('#write').click(function(){
+                $.ajax(
+                   {
+                      url: './board/write.jsp',
+                      /* dataType: 'jsp', */
+                      success: function(data){
+                         $('#freeboard').load('./board/write.jsp #writeform');
+                      }
+                   }      
+                );
+             });
+            });         
+   </script>
+   
 </head>
 <body>
-	<div class="spinner"></div>
-	<!--============================== header =================================-->
-	<header>
-		<jsp:include page="../header.jsp"></jsp:include>
-	</header>
-	<div class="bg-content">
+   <div class="spinner"></div>
+   <!--============================== header =================================-->
+   <header>
+      <jsp:include page="../header.jsp"></jsp:include>
+   </header>
+   <div class="bg-content">
 <!--============================== content =================================-->
-		      <div id="content">
+            <div id="content">
          <div class="ic">More Website Templates @ TemplateMonster.com.
             November19, 2012!</div>
          <div class="container">
-         	<h3>Community</h3>
+            <h3>Community</h3>
             <div class="row" id="freeboard">
                <table class="board-table">
                   <tr>
@@ -106,7 +106,7 @@
                      </td>
                   </tr>
                   <%
-                  	 int detailnum;
+                      int detailnum;
                      for (int i = 0; i < boardList.size(); i++) {
                         BoardBean bl = (BoardBean) boardList.get(i);
                         detailnum = bl.getTextNum();
@@ -116,7 +116,7 @@
                      onmouseout="this.style.backgroundColor='#FFD8D8'"> -->
                      <td><%=bl.getTextNum()%></td>
                      <td>
-                     	<a href="./BoardDetailAction.bo?num=<%=bl.getTextNum()%>">
+                        <a href="./BoardDetailAction.bo?num=<%=bl.getTextNum()%>">
                             <%= bl.getText_Name() %>
                         </a>
                      </td>
@@ -204,10 +204,10 @@
          </div>
       </div>
    </div>
-	<!--============================== footer =================================-->
-	<footer>
-		<jsp:include page="../footer.jsp"></jsp:include>
-	</footer>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+   <!--============================== footer =================================-->
+   <footer>
+      <jsp:include page="../footer.jsp"></jsp:include>
+   </footer>
+   <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
      <Resource name="jdbc/OracleDB" 
          auth="Container"
          type="javax.sql.DataSource" 
-         username="hr" 
+         username="jda" 
          password="1004"
          driverClassName="oracle.jdbc.driver.OracleDriver"
          factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"

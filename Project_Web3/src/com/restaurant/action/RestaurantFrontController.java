@@ -20,13 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 		 String command=RequestURI.substring(contextPath.length());
 		 ActionForward forward=null;
 		 Action action=null;
-		   
+		 
 		   if(command.equals("/Apply.res")){
 			   forward=new ActionForward();
 			   forward.setRedirect(false);
-			   forward.setPath("/Main.jsp");
-			  
-			   
+			   forward.setPath("./Main.jsp");
 		   }else if(command.equals("/RestaurantApplyAction.res")){
 			   action = new RestaurantApplyAction();
 			   try{
@@ -34,6 +32,29 @@ import javax.servlet.http.HttpServletResponse;
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
+		   }else if(command.equals("/RestaurantListAction.res")){
+			   action = new RestaurantListAction();
+			   try{
+				   forward=action.execute(request, response);
+			   }catch(Exception e){
+				   e.printStackTrace();
+			   }
+		   }else if(command.equals("/List.res")){
+			   forward=new ActionForward();
+			   forward.setRedirect(false);
+			   forward.setPath("./admin/Application.jsp");
+		   }else if(command.equals("/RestaurantDetailAction.res")){
+			   action = new RestaurantDetailAction();
+			   try{
+				   forward=action.execute(request, response);
+			   }catch(Exception e){
+				   e.printStackTrace();
+			   }
+		   }else if(command.equals("/AppDetail.res")){
+			   forward=new ActionForward();
+			   forward.setRedirect(false);
+			   forward.setPath("./admin/Application_detail.jsp");
+			   
 		   }
 		   
 		   if(forward != null){

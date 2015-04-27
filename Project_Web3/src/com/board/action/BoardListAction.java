@@ -53,6 +53,6 @@ import com.board.db.BoardDAO;
 		
 		forward.setRedirect(false);
 		forward.setPath("./FreeBoardView.bo");
-   		return forward;
+   		return forward;	
 	 }
  }
